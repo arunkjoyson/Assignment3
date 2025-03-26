@@ -1,1 +1,1 @@
-export { default } from "./calculateCanvasSize";
+export { default } from "./calculateCanvasPerimeter";
