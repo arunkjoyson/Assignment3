@@ -1,16 +1,21 @@
-# SENG8120 Modern Automated Testing 
-
-Version: Alpaca
+# SENG8120 Modern Automated Testing
 
 ## Purpose
 
-This repository houses the code we require for examples and assignments.
+This repository contains the code for assignment-3.
 
 ## Repository Usage
 
-This repository will contain branches of code.
+Clone this repository and navigate to the `src` directory:
 
-Please refer to your instructor's directions on how to use this repository.
+```bash
+git clone git@github.com:arunkjoyson/Assignment3.git
+cd src
+```
+## Prerequisites
+
+Ensure you have **Node.js (v14 or later)** installed on your system.  
+If not, download and install it from [https://nodejs.org](https://nodejs.org).
 
 ## Branch Usage
 
@@ -35,6 +40,22 @@ followed by:
 ```bash
 npm start
 ```
+## Running the Software
+
+To run the main function, use:
+
+```bash
+npm start
+```
+
+Ensure your `package.json` includes the following `scripts` section:
+
+```json
+"scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc",
+    "test": "jest"
+  }
 
 Note:  if you make a change in the production code, you must `build` & `start`.
 Otherwise, your changes will not be reflected.
