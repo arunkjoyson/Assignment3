@@ -22,4 +22,28 @@ describe('calculateCanvasDiagonal', () => {
     expect(calculateCanvasDiagonal('3', 'b')).toBeNaN();
     expect(calculateCanvasDiagonal('a', 'b')).toBeNaN();
   });
+
+  test('should correctly calculate diagonal for decimal inputs', () => {
+    expect(calculateCanvasDiagonal('1.5', '2.0')).toBeCloseTo(Math.sqrt(1.5 ** 2 + 2.0 ** 2));
+  });
+
+  test('should trim and calculate for inputs with whitespace', () => {
+    expect(calculateCanvasDiagonal(' 3 ', ' 4 ')).toBeCloseTo(5);
+  });
+
+  test('should return NaN for empty string inputs', () => {
+    expect(calculateCanvasDiagonal('', '4')).toBeNaN();
+    expect(calculateCanvasDiagonal('3', '')).toBeNaN();
+  });
+
+  test('should handle very large numbers without crashing', () => {
+    const big = '1000000000';
+    const result = calculateCanvasDiagonal(big, big);
+    expect(result).toBeCloseTo(Math.sqrt(2 * (1e9 ** 2)));
+  });
+
+  test('should return NaN for special character inputs', () => {
+    expect(calculateCanvasDiagonal('#', '4')).toBeNaN();
+    expect(calculateCanvasDiagonal('3', '@')).toBeNaN();
+  });
 });
