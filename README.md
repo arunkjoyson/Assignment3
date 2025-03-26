@@ -48,14 +48,6 @@ To run the main function, use:
 npm start
 ```
 
-Ensure your `package.json` includes the following `scripts` section:
-
-"scripts": {
-    "start": "ts-node src/main.ts",
-    "build": "tsc",
-    "test": "jest"
-  }
-
 Note:  if you make a change in the production code, you must `build` & `start`.
 Otherwise, your changes will not be reflected.
 
