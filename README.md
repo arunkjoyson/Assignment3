@@ -10,7 +10,7 @@ Clone this repository and navigate to the `src` directory:
 
 ```bash
 git clone git@github.com:arunkjoyson/Assignment3.git
-cd src
+cd Assignment3/src
 ```
 ## Prerequisites
 
