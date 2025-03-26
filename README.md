@@ -50,7 +50,6 @@ npm start
 
 Ensure your `package.json` includes the following `scripts` section:
 
-```json
 "scripts": {
     "start": "ts-node src/main.ts",
     "build": "tsc",
