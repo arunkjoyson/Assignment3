@@ -1,13 +1,29 @@
-export default function calculateCanvasDiagonal(length: string, width: string): number {
-  // Trim and parse inputs
-  const l = parseFloat(length.trim());
-  const w = parseFloat(width.trim());
+/**
+ * Calculates the diagonal of a canvas using the Pythagorean theorem.
+ * Returns an error message for zero/negative/null/undefined.
+ * Returns NaN for invalid strings.
+ */
+export default function calculateCanvasDiagonal(
+  length: string | null | undefined,
+  width: string | null | undefined
+): number | string {
+  // Null or undefined check
+  if (length == null || width == null) {
+    return "Length and width must be greater than zero.";
+  }
 
-  // Check for invalid input
+  const l = parseFloat(length.toString().trim());
+  const w = parseFloat(width.toString().trim());
+
+  // Check for invalid strings
   if (isNaN(l) || isNaN(w)) {
     return NaN;
   }
 
-  // Use absolute values to ignore negative inputs
-  return Math.sqrt(Math.abs(l) ** 2 + Math.abs(w) ** 2);
+  // Check for zero or negative
+  if (l <= 0 || w <= 0) {
+    return "Length and width must be greater than zero.";
+  }
+
+  return Math.sqrt(l ** 2 + w ** 2);
 }
